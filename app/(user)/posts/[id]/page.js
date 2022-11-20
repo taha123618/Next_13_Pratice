@@ -1,5 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 // for 404
 export const dynamicParams = true;
@@ -34,6 +35,9 @@ const post = async ({ params }) => {
           <h1>{post.title}</h1>
           <p>{post.body}</p>
         </div>
+        <Link href="/">
+          <button> Go Back Home</button>
+        </Link>
       </ul>
     </>
   );
