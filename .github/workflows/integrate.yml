@@ -1,5 +1,7 @@
+# Action Name
 name: Intergrate
 
+# Action Events
 on:
   push:
     branches: [main]
@@ -7,13 +9,18 @@ on:
   pull_request:
     branches: [main]
 
+# Action jobs
 jobs:
+  # Job Name
   Intergrate_Node:
+    # Job Server
     runs-on: ubuntu-latest
+    # Jon Steps
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+      #  Cache the node_modules
       - name: Cache node modules
         id: myCacheStep
         uses: actions/cache@v3
@@ -26,16 +33,16 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
+      # list the nodes in cache
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         name: List the state of node modules
         continue-on-error: true
         run: npm list
-
-      # - name: Install Node
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16
+      # Install the Node normal way without cache
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - run: npm install
       - run: npm run build --if-present
       # - run: npm run test:staging
