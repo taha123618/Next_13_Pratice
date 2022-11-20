@@ -3,7 +3,15 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <h1>About Page</h1>
+      <div
+        style={{
+          display: "grid",
+          placeItems: "center",
+          color: "rebeccapurple",
+        }}
+      >
+        <h1> About Page </h1>
+      </div>
     </>
   );
 };
