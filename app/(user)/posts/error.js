@@ -13,7 +13,7 @@ export default function Error({ error, reset }) {
     <div>
       <p>404! {error.message}</p>
       <Link href="/">
-        <button> Go Home</button>
+        <button> Go Home Page</button>
       </Link>
       <button onClick={() => reset()}>Reset error boundary</button>
     </div>
