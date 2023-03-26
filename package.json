@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taha123618/Next_13_Pratice.git"
+  },
+  "author": "Hoang Vo (https://hoangvvo.com)",
   "dependencies": {
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
